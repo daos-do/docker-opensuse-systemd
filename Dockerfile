@@ -5,6 +5,7 @@ LABEL maintainer="daos-do"
 ENV container=docker
 
 RUN zypper install -y dbus-1 systemd-sysvinit; \
+    zypper clean; \
     cd /usr/lib/systemd/system/sysinit.target.wants/; \
     for i in *; do [ $i = systemd-tmpfiles-setup.service ] || rm -f $i; done; \
     rm -f /lib/systemd/system/multi-user.target.wants/*; \
@@ -12,7 +13,8 @@ RUN zypper install -y dbus-1 systemd-sysvinit; \
     rm -f /lib/systemd/system/local-fs.target.wants/*; \
     rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
     rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
-    rm -f /lib/systemd/system/basic.target.wants/*
+    rm -f /lib/systemd/system/basic.target.wants/*; \
+    rm -f /lib/systemd/system/anaconda.target.wants/*
 
 VOLUME ["/sys/fs/cgroup", "run"]
 
