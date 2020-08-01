@@ -1,4 +1,4 @@
-FROM opensuse/leap:latest
+FROM opensuse/leap:15.2
 
 LABEL maintainer="daos-do"
 
@@ -16,4 +16,5 @@ RUN zypper install -y dbus-1 systemd-sysvinit; \
     rm -f /lib/systemd/system/anaconda.target.wants/*
 
 VOLUME ["/sys/fs/cgroup"]
+
 CMD ["/sbin/init"]
