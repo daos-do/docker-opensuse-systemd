@@ -21,7 +21,7 @@ The master branch contains the latest version.
 
 ```
 docker run -d \
-  -- tty \
+  --tty \
   --privileged \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
   --name daosd-opensuse15.1-systemd \
