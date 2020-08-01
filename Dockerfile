@@ -15,4 +15,5 @@ RUN zypper install -y dbus-1 systemd-sysvinit; \
     rm -f /lib/systemd/system/basic.target.wants/*
 
 VOLUME ["/sys/fs/cgroup", "run"]
+
 CMD ["/sbin/init"]
