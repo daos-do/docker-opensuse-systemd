@@ -1,5 +1,7 @@
 # Docker openSUSE Leap Systemd
 
+[![docker build](https://github.com/daos-do/docker-opensuse-systemd/workflows/docker%20build/badge.svg?branch=15.2)](https://hub.docker.com/repository/docker/daosdo/opensuse-systemd)
+
 A Dockerfile for building openSUSE Leap images that have systemd enabled.
 
 ## Branches
