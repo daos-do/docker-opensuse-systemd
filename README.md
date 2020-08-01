@@ -1,27 +1,24 @@
 # Docker openSUSE Leap Systemd
 
-[![docker build](https://github.com/daos-do/docker-opensuse-systemd/workflows/docker%20build/badge.svg?branch=15.2)](https://hub.docker.com/repository/docker/daosdo/opensuse-systemd)
+[![build status](https://img.shields.io/docker/cloud/build/daosdo/opensuse-systemd)](https://hub.docker.com/repository/docker/daosdo/opensuse-systemd)
 
-A Dockerfile for building openSUSE Leap images that have systemd enabled.
+openSUSE Leap image that has systemd enabled.
 
 ## Branches
 
-Each branch in this git repository is used for building specific versions
-of openSUSE Leap images.
+Each branch in the repository is used for building a specific version.
 
-The master branch contains the latest version.
-
-|Branch |openSUSE Leap Version|FROM Docker image tag|
-|-------|---------------------|---------------------|
-|master |latest (15.2)        |latest               |
-|15.2   |15.2                 |15.2                 |
-|15.1   |15.1                 |15.1                 |
+| Branch | openSUSE Leap Version | FROM Docker image tag |
+| ------ | --------------------- | --------------------- |
+| master | latest (15.2)         | latest                |
+| 15.2   | 15.2                  | 15.2                  |
+| 15.1   | 15.1                  | 15.1                  |
 
 ## Usage
 
 ### Run it
 
-```
+```bash
 docker run -d \
   -- tty \
   --privileged \
@@ -35,12 +32,12 @@ running `docker logs`.
 
 ### Enter it
 
-```
+```bash
 docker exec -it daosd-opensuse15.2-systemd /bin/bash
 ```
 
 ### Remove it
 
-```
+```bash
 docker rm -f daosd-opensuse15.2-systemd
 ```
