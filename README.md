@@ -1,6 +1,6 @@
 # Docker openSUSE Leap Systemd
 
-[![docker build](https://github.com/daos-do/docker-centos-systemd/workflows/docker%20build/badge.svg?branch=master)](https://hub.docker.com/repository/docker/daosdo/centos-systemd)
+[![build status](https://img.shields.io/docker/cloud/build/daosdo/opensuse-systemd)](https://hub.docker.com/repository/docker/daosdo/opensuse-systemd)
 
 openSUSE Leap image that has systemd enabled.
 
@@ -18,7 +18,7 @@ Each branch in the repository is used for building a specific version.
 
 ### Run it
 
-```
+```bash
 docker run -d \
   -- tty \
   --privileged \
@@ -32,12 +32,12 @@ running `docker logs`.
 
 ### Enter it
 
-```
+```bash
 docker exec -it daosd-opensuse-systemd /bin/bash
 ```
 
 ### Remove it
 
-```
+```bash
 docker rm -f daosd-opensuse-systemd
 ```
