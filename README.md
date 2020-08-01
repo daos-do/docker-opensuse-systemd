@@ -24,8 +24,8 @@ docker run -d \
   -- tty \
   --privileged \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  --name daosd-opensuse-systemd \
-  daosdo/opensuse-systemd:latest
+  --name daosd-opensuse15.1-systemd \
+  daosdo/opensuse-systemd:15.1
 ```
 
 Adding `--tty` allocates a pseudo-TTY and enables color in the logs when
@@ -34,11 +34,11 @@ running `docker logs`.
 ### Enter it
 
 ```
-docker exec -it daosd-opensuse-systemd /bin/bash
+docker exec -it daosd-opensuse15.1-systemd /bin/bash
 ```
 
 ### Remove it
 
 ```
-docker rm -f daosd-opensuse-systemd
+docker rm -f daosd-opensuse15.1-systemd
 ```

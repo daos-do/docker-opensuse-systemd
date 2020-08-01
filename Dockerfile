@@ -1,4 +1,4 @@
-FROM opensuse/leap:latest
+FROM opensuse/leap:15.1
 
 LABEL maintainer="daos-do"
 
