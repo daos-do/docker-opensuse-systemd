@@ -5,7 +5,7 @@ LABEL maintainer="daos-do"
 ENV container=docker
 
 RUN zypper install -y dbus-1 systemd-sysvinit; \
-    zypper clean; \
+    zypper clean --all; \
     cd /usr/lib/systemd/system/sysinit.target.wants/; \
     for i in *; do [ $i = systemd-tmpfiles-setup.service ] || rm -f $i; done; \
     rm -f /lib/systemd/system/multi-user.target.wants/*; \
@@ -16,9 +16,10 @@ RUN zypper install -y dbus-1 systemd-sysvinit; \
     rm -f /lib/systemd/system/basic.target.wants/*; \
     rm -f /lib/systemd/system/anaconda.target.wants/*
 
-RUN LANG=C dnf -y update; \
-    dnf -y install python38 python3-pip python3-dnf sudo curl wget gzip tar less; \
-    dnf -y install epel-release; \
+RUN LANG=C; \
+    zypper clean --all; \
+    zypper refresh --force; \
+    zypper install -y python3 python3-pip python python-xml sudo curl wget gzip tar less; \
     if [ -f /usr/bin/python3 ];then /usr/bin/python3 -m pip install --no-input --disable-pip-version-check pip --upgrade; fi; \
     mkdir -p /etc/ansible; \
     echo "DO_ANSIBLE_BOOTSTRAPPED=$(date '+%Y-%m-%d %H:%M:%S %Z')" > /etc/ansible/bootstrapped;
